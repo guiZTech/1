@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Clicker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero-panel" aria-labelledby="gameTitle">
+            <div class="scanlines" aria-hidden="true"></div>
+
+            <header class="top-bar">
+                <div>
+                    <p class="eyebrow">Arcade mode</p>
+                    <h1 id="gameTitle">Pixel Click</h1>
+                    <p class="subtitle">Clique, encha a fúria, desbloqueie upgrades e transforme cada pixel em moedas.</p>
+                </div>
+                <div class="coin-chip" aria-label="Moedas atuais">
+                    <span>◆</span>
+                    <strong id="counter">0</strong>
+                </div>
+            </header>
+
+            <section class="stats" aria-label="Status do jogador">
+                <article class="stat-box primary-stat">
+                    <span>Moedas</span>
+                    <strong id="counterMirror">0</strong>
+                </article>
+                <article class="stat-box">
+                    <span>Multiplicador</span>
+                    <strong id="multiplier">x1</strong>
+                </article>
+                <article class="stat-box">
+                    <span>Velocidade</span>
+                    <strong id="speedValue">x1.0</strong>
+                </article>
+            </section>
+
+            <section class="click-stage" aria-label="Área principal de clique">
+                <div class="combo-section">
+                    <div class="combo-header">
+                        <span>Fúria de clique</span>
+                        <strong id="comboValue">0/100</strong>
+                    </div>
+                    <div class="combo-bar" id="comboBar" aria-hidden="true">
+                        <div class="combo-fill" id="comboFill"></div>
+                    </div>
+                    <div id="furyStatus" class="fury-status">Pronto para carregar a fúria</div>
+                </div>
+
+                <div id="achievement" class="achievement" aria-live="polite"></div>
+
+                <div class="click-area" id="clickArea">
+                    <button id="addPointBtn" type="button">
+                        <span>Clique aqui</span>
+                        <small>+ moedas</small>
+                    </button>
+                    <div class="pixel-burst" id="pixelBurst" aria-hidden="true"></div>
+                </div>
+            </section>
+
+            <div class="game-actions" aria-label="Ações do jogo">
+                <button id="saveBtn" class="game-action-btn" type="button">Salvar progresso</button>
+                <button id="exportBtn" class="game-action-btn" type="button">Exportar JSON</button>
+            </div>
+
+            <nav class="shop-tabs" role="tablist" aria-label="Seções da loja">
+                <button class="shop-tab active" id="upgradesTab" type="button">Upgrades</button>
+                <button class="shop-tab" id="skinsTab" type="button">Skins</button>
+                <button class="shop-tab" id="achievementsTab" type="button">Conquistas</button>
+            </nav>
+
+            <section class="shop panel-section" id="upgradesSection">
+                <div class="shop-header">
+                    <p class="eyebrow">Loja</p>
+                    <h2>Upgrades</h2>
+                    <p>Cards compactos para aumentar o ganho por clique e acelerar sua progressão.</p>
+                </div>
+                <div id="shopCards" class="shop-cards"></div>
+            </section>
+
+            <section class="skin-shop panel-section" id="skinShop" hidden>
+                <div class="shop-header">
+                    <p class="eyebrow">Visual</p>
+                    <h2>Skins</h2>
+                    <p>Troque a paleta pixel art conforme desbloqueia novas conquistas.</p>
+                </div>
+                <div id="skinOptions" class="skin-options"></div>
+            </section>
+
+            <section class="achievement-section panel-section" id="achievementSection" hidden>
+                <div class="shop-header">
+                    <p class="eyebrow">Metas</p>
+                    <h2>Conquistas</h2>
+                    <p>Acompanhe marcos importantes do save.</p>
+                </div>
+                <div id="achievementList" class="achievement-list"></div>
+                <button id="resetCycleBtn" class="game-action-btn reset-cycle-btn" type="button" hidden>Reiniciar ciclo</button>
+            </section>
+        </section>
+    </main>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
